@@ -52,6 +52,9 @@ fi
 rm -rf /var/www/html
 ln -fs /vagrant/wordpress /var/www/html
 
+echo -e "Configurando Apache Usuário e Grupo"
+cp envvars /etc/apache2/
+
 echo -e "Reiniciando Apache"
 service apache2 restart >> vm_build.log 2>&1
 
