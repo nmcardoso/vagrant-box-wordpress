@@ -53,7 +53,7 @@ sudo rm -rf /var/www/html
 sudo ln -fs /vagrant/wordpress /var/www/html
 
 echo -e "Configurando Apache Usuário e Grupo"
-sudo cp /vagrant/envvars /etc/apache2/
+sudo cp /vagrant/config/envvars /etc/apache2/
 
 echo -e "Reiniciando Apache"
 sudo service apache2 restart >> vm_build.log 2>&1
@@ -64,7 +64,7 @@ echo -e "Instalação do servidor FTP"
 sudo apt-get -y install vsftpd >> vm_build.log 2>&1
 
 echo -e "Configurando FTP"
-sudo cp /vagrant/vsftpd.conf /etc/vsftpd.conf
+sudo cp /vagrant/config/vsftpd.conf /etc/vsftpd.conf
 
 echo -e "Servidor FTP Instalado e Configurado\n"
 
@@ -77,7 +77,7 @@ tar -xzf /tmp/wp.tar.gz -C /vagrant/
 rm -rf /tmp/wp.tar.gz
 
 echo -e "Configurando Banco de Dados do Wordpress"
-cp /vagrant/wp-config.php /vagrant/wordpress/wp-config.php
+cp /vagrant/config/wp-config.php /vagrant/wordpress/wp-config.php
 
 echo -e "Confguração Finalizada\n"
 echo -e "Termine a instalação do Wordpress acessando o IP da Máquina Virtual http://192.168.33.10"
