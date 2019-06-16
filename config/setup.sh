@@ -69,7 +69,7 @@ sudo cp /vagrant/config/vsftpd.conf /etc/vsftpd.conf
 echo -e "Servidor FTP Instalado e Configurado\n"
 
 echo -e "Iniciando instalação do Wordpress"
-sudo cd /vagrant/wordpress
+cd /vagrant/wordpress
 
 echo -e "Baixando Wordpress"
 curl -s https://br.wordpress.org/latest-pt_BR.tar.gz --output /tmp/wp.tar.gz
