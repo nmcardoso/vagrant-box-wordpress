@@ -37,6 +37,23 @@ define('DB_CHARSET', 'utf8');
 /** O tipo de Collate do banco de dados. Não altere isso se tiver dúvidas. */
 define('DB_COLLATE', '');
 
+/** Diretório base do wordpress */
+define('FTP_BASE', 'wordpress/');
+
+/** Endereço do servidor FTP */
+define('FTP_HOST', '192.168.33.10');
+
+/** Usuário FTP */
+define('FTP_USER', 'vagrant');
+
+/** Senha FTP */
+define('FTP_PASS', 'vagrant');
+
+/** Caminho da pasta wp-content */
+define('FTP_CONTENT_DIR', 'wordpress/wp-content/');
+
+/** Cominho da pasta plugins */
+define('FTP_PLUGIN_DIR', 'wordpress/wp-content/plugins/');
 /**#@+
  * Chaves únicas de autenticação e salts.
  *
