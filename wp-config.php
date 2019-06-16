@@ -54,6 +54,7 @@ define('FTP_CONTENT_DIR', 'wordpress/wp-content/');
 
 /** Cominho da pasta plugins */
 define('FTP_PLUGIN_DIR', 'wordpress/wp-content/plugins/');
+
 /**#@+
  * Chaves únicas de autenticação e salts.
  *
