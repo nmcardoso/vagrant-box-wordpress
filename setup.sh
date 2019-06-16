@@ -75,6 +75,6 @@ rm -rf /tmp/wp.tar.gz
 echo -e "Configurando Banco de Dados do Wordpress"
 cp /vagrant/wp-config.php /vagrant/wordpress/wp-config.php
 
-echo -e "Confguração Finalizada"
+echo -e "Confguração Finalizada\n"
 echo -e "Termine a instalação do Wordpress acessando o IP da Máquina Virtual http://192.168.33.10"
 
