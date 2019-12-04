@@ -46,11 +46,7 @@ echo -e "Configurando Apache Override"
 sudo sed -i "s/AllowOverride None/AllowOverride All/g" /etc/apache2/apache2.conf
 
 echo -e "Configurando diretório raiz do Apache"
-if [ ! -d "/vagrant/wordpress" ]; then
-  mkdir /vagrant/wordpress
-fi
-sudo rm -rf /var/www/html
-sudo ln -fs /vagrant/wordpress /var/www/html
+sudo sed -i 's;DocumentRoot /var/www/html;DocumentRoot /var/www/html/wordpress;' /etc/apache2/sites-enabled/000-default.conf
 
 echo -e "Configurando Apache Usuário e Grupo"
 sudo cp /vagrant/config/envvars /etc/apache2/
@@ -69,6 +65,9 @@ sudo cp /vagrant/config/vsftpd.conf /etc/vsftpd.conf
 echo -e "Servidor FTP Instalado e Configurado\n"
 
 echo -e "Iniciando instalação do Wordpress"
+if [ ! -d "/vagrant/wordpress" ]; then
+  mkdir /vagrant/wordpress
+fi
 cd /vagrant/wordpress
 
 echo -e "Baixando Wordpress"
@@ -79,6 +78,10 @@ rm -rf /tmp/wp.tar.gz
 echo -e "Configurando Banco de Dados do Wordpress"
 cp /vagrant/config/wp-config.php /vagrant/wordpress/wp-config.php
 
+echo -e "Criando links simbólicos"
+sudo ln -fs /vagrant/wordpress /var/www/html/
+sudo ln -fs /vagrant/splus-theme /var/www/html/wordpress/wp-content/themes/
+
 echo -e "Confguração Finalizada\n"
-echo -e "Termine a instalação do Wordpress acessando o IP da Máquina Virtual http://192.168.33.10"
+echo -e "Termine a instalação do Wordpress acessando o IP da Máquina Virtual"
 
