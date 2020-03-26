@@ -13,16 +13,16 @@ sudo apt-get -qq update
 echo -e "Instalando pacotes base"
 sudo apt-get -y install curl build-essential git software-properties-common tar >> vm_build.log 2>&1
 
-echo -e "Instalando PHP 7.3"
+echo -e "Instalando PHP 7.4"
 sudo add-apt-repository -y ppa:ondrej/php >> vm_build.log 2>&1
 sudo apt-get -qq update
-sudo apt-get -y install php7.3 >> vm_build.log 2>&1
+sudo apt-get -y install php7.4 >> vm_build.log 2>&1
 
 echo -e "Instalando Apache"
 sudo apt-get -y install apache2 >> vm_build.log 2>&1
 
 echo -e "Instalando Módulos Necessários"
-sudo apt-get -y install php-{curl,mysql,gd,gettext,bcmath,bz2,zip,intl,mbstring,mcrypt} >> vm_build.log 2>&1
+sudo apt-get -y install php7.4-{curl,mysql,gd,gettext,bcmath,bz2,zip,intl,mbstring,mcrypt} >> vm_build.log 2>&1
 sudo apt-get -y install libapache2-mod-php >> vm_build.log 2>&1
 
 echo -e "Instalando MySQL"
