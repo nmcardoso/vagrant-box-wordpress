@@ -56,14 +56,6 @@ sudo service apache2 restart >> vm_build.log 2>&1
 
 echo -e "Apache, PHP e MySQL Configurados\n"
 
-echo -e "Instalação do servidor FTP"
-sudo apt-get -y install vsftpd >> vm_build.log 2>&1
-
-echo -e "Configurando FTP"
-sudo cp /vagrant/config/vsftpd.conf /etc/vsftpd.conf
-
-echo -e "Servidor FTP Instalado e Configurado\n"
-
 echo -e "Iniciando instalação do Wordpress"
 if [ ! -d "/vagrant/wordpress" ]; then
   mkdir /vagrant/wordpress
